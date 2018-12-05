@@ -15,6 +15,15 @@ public class AttrController {
     @Reference
     private AttrService attrService;
 
+    @RequestMapping("attrInfoList")
+    @ResponseBody
+    public List<BaseAttrInfo> attrInfoList(String catalog3Id){
+
+        List<BaseAttrInfo> baseAttrInfos = attrService.attrInfoList(catalog3Id);
+
+        return baseAttrInfos;
+    }
+
     @RequestMapping("attrListPage")
     public String attrListPage(){
         return "attrListPage";

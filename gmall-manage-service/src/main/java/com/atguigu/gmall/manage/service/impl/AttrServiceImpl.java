@@ -50,4 +50,21 @@ public class AttrServiceImpl implements AttrService{
             //编辑
         }
     }
+
+    @Override
+    public List<BaseAttrInfo> attrInfoList(String catalog3Id) {
+        //查询平台属性
+        BaseAttrInfo baseAttrInfo = new BaseAttrInfo();
+        baseAttrInfo.setCatalog3Id(catalog3Id);
+        List<BaseAttrInfo> baseAttrInfos = baseAttrInfoMapper.select(baseAttrInfo);
+        //查询平台属性值
+        for (BaseAttrInfo attrInfo : baseAttrInfos) {
+            BaseAttrValue baseAttrValue = new BaseAttrValue();
+            baseAttrValue.setAttrId(attrInfo.getId());
+            List<BaseAttrValue> baseAttrValues = baseAttrValueMapper.select(baseAttrValue);
+
+            attrInfo.setAttrValueList(baseAttrValues);
+        }
+        return baseAttrInfos;
+    }
 }
