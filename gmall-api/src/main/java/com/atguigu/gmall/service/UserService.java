@@ -26,4 +26,10 @@ public interface UserService {
     List<UserAddress> getUserAddressList();
 
     UserAddress getUserAddressById(Integer id);
+
+    UserInfo login(UserInfo userInfo);
+
+    List<UserAddress> getAddressListByUserId(String userId);
+
+    UserAddress getAddressListById(String addressId);
 }

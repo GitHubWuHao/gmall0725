@@ -10,5 +10,16 @@ gmall-item-web: 8082
 gmall-list-service: 8073
 gmall-list-web: 8083
 
-gmall-cert-service: 8074
-gmall-cert-web: 8084
+gmall-cart-service: 8074
+gmall-cart-web: 8084
+
+gmall-passport-web: 8085
+
+gmall-order-service: 8076
+gmall-order-web: 8086
+
+gmall-order-service: 8076
+gmall-order-web: 8086
+
+gmall-payment-service: 8077
+gmall-payment-web: 8087

@@ -2,6 +2,7 @@ package com.atguigu.gmall.manage.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.atguigu.gmall.bean.BaseAttrInfo;
+import com.atguigu.gmall.bean.BaseAttrValue;
 import com.atguigu.gmall.service.BaseAttrService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +17,19 @@ public class BaseAttrController {
     private BaseAttrService baseAttrService;
 
     /**
-     * 平台属性列表
+     * 编辑属性值--通过商品属性id获取商品属性值列表
+     * @param attrId
+     * @return
+     */
+    @RequestMapping("getAttrValueList")
+    @ResponseBody
+    public List<BaseAttrValue> getAttrValueList(String attrId){
+        List<BaseAttrValue> baseAttrValues = baseAttrService.getAttrValueList(attrId);
+        return baseAttrValues;
+    }
+
+    /**
+     * spu管理--增加sku--获取平台属性和属性值
      * @param catalog3Id
      * @return
      */
@@ -30,7 +43,7 @@ public class BaseAttrController {
     }
 
     /**
-     * 属性列表
+     * 跳转属性列表页面
      * @return
      */
     @RequestMapping("attrListPage")
@@ -39,7 +52,7 @@ public class BaseAttrController {
     }
 
     /**
-     * 获取属性列表
+     * 刷新列表--获取属性列表
      * @param catalog3Id
      * @return
      */
@@ -51,7 +64,7 @@ public class BaseAttrController {
     }
 
     /**
-     * 保存平台属性信息
+     * 保存或更新平台属性信息
      * @param baseAttrInfo
      * @return
      */

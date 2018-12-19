@@ -1,5 +1,7 @@
 package com.atguigu.gmall.bean;
 
+import com.atguigu.gmall.bean.enums.PaymentWay;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
