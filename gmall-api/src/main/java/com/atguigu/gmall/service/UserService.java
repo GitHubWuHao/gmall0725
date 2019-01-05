@@ -32,4 +32,8 @@ public interface UserService {
     List<UserAddress> getAddressListByUserId(String userId);
 
     UserAddress getAddressListById(String addressId);
+
+    void sendCartMerge(String userId,String cartListCookie);
+
+    void sendCartFlushCache(String userId);
 }
